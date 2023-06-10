@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>MoonLight Parallax Effects | Vanilla Javascript</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+
+      <! -- More:- https://hellofhackers.com/forums/web-programming.8/ -- >
+
+      <a href="https://hellofhackers.com/members/cyberdemon.3695/" class="logo">Moon Story</a>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <section>
+      <img src="stars.png" id="stars">
+      <img src="moon.png" id="moon">
+      <img src="mountains_behind.png" id="mountains_behind">
+      <h2 id="text">Moon Light</h2>
+      <a href="#sec" id="btn">Explore</a>
+      <img src="mountains_front.png" id="mountains_front">
+      <div class="content">
+    </section>
+    <div class="sec" id="sec">
+      <h2>Moon's Eternal Memories</h2>
+      <p>Once upon a time, in the vast expanse of the moon, there stood majestic mountains that reached towards the starlit sky. These mountains had witnessed countless stories unfold over the ages, stories of love, adventure, and triumph. They were silent observers of the lunar landscape, their peaks adorned with the marks of time.
+
+        Among these mountains, there was one that held a special place in the moon's memory. It was known as the Mountain of Memories. Legend had it that the mountain had the power to preserve the memories of all who had ever set foot on the lunar surface.
+        
+        As astronauts explored the moon's surface, they left behind traces of their presence, imprints of their journeys. And the Mountain of Memories absorbed these imprints, embedding them within its rocky terrain. Every step, every discovery, every emotion—they were all imprinted on the mountain, becoming part of its essence.
+        <br><br>
+        The Mountain of Memories became a repository of human experiences, a testament to the indomitable spirit of exploration. It held the memories of the first moonwalk, when Neil Armstrong took his giant leap for mankind. It remembered the joy of the Apollo missions, the camaraderie of the astronauts, and the awe-inspiring beauty of the lunar landscape.
+        
+        But the mountain's memories were not limited to astronauts alone. It remembered the dreams of stargazers who gazed longingly at the moon from Earth, yearning to be a part of its celestial dance. It held the memories of scientists and engineers who dedicated their lives to unraveling the mysteries of the universe. It even remembered the hopes and aspirations of the children who looked up at the night sky, dreaming of reaching for the stars.
+        
+        
+     </p>
+    </div class="sec">
+    <script type="text/javascript">
+      let moon = document.getElementById('moon');
+      let stars = document.getElementById('stars');
+      let mountains_behind = document.getElementById('mountains_behind');
+      let mountains_front = document.getElementById('mountains_front');
+      let text = document.getElementById('text');
+      let btn = document.getElementById('btn');
+      let header = document.querySelector('header');
+      window.addEventListener('scroll', function() {
+        var value = window.scrollY;
+        moon.style.top = -value * -1.05 + 'px';
+        stars.style.left = value * 0.25 + 'px';
+        mountains_behind.style.top =-value * -0.5 + 'px';
+        header.style.top =-value * -0.5 + 'px';
+        mountains_front.style.top =-value * 0 + 'px';
+        text.style.marginTop = value * 1.5 + 'px';
+        btn.style.marginTop = value * 1.5 + 'px';
+        text.style.marginRight = value * 4 + 'px';
+      });
+    </script>
+  </body>
+</html>
